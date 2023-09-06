@@ -19,10 +19,15 @@ const Testcomp = () => {
  
 };
 
+
+
+
+
 function App() {
   return (
     <div className="App">
      Hello World!
+     <div>{userid.name} <hr />{userid.age} {userid.email}</div>
       <Testcomp />
 
 
@@ -30,5 +35,19 @@ function App() {
   );
 };
 
+
+
+
+
+
+
+
+//props
+const userid = {
+  name: "KK",
+  age: 11,
+  email:null,
+
+}
 
 export default App;
