@@ -4,11 +4,12 @@ import './App.css';
 
 
 
-const Testcomp = () => {
+const Testcomp = (args) => {
   return (
     <div>
-        <h1>Kishlay</h1>
-        <h2>@mail.com</h2>
+        <h1>{args.name}</h1>
+        <h2>{args.age}</h2>
+        {args.email}
 
     </div>
 
@@ -26,10 +27,18 @@ const Testcomp = () => {
 function App() {
   return (
     <div className="App">
-     Hello World!
-     <div>{userid.name} <hr />{userid.age} {userid.email}</div>
+     Hello World!<br />
+
+     Variables:
+     <div>{testprop.name} <hr />{testprop.age} {testprop.email}</div>
+      
+    <br /> <br /> component test:
+      
       <Testcomp />
 
+      Prop test: <br />
+      <Userid label="Click me!" /><br /><br />
+      <Userid label="DON'T" />  
 
     </div>
   );
@@ -41,13 +50,18 @@ function App() {
 
 
 
-
+const Userid = (props) => {
+  return (
+    <button>
+      {props.label}
+    </button>
+  );
+};
 //props
-const userid = {
+const testprop = {
   name: "KK",
   age: 11,
   email:null,
-
 }
 
 export default App;
