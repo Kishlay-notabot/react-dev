@@ -40,13 +40,16 @@ function App() {
       Prop test: <br />
 
       <Userid label="Click me!" /><br /><br />
-      <Userid label="DON'T" />  
+      <Userid label="DON'T" />  <hr />
+      <Userid label="its a prop!" />
+
 
     </div>
   );
 };
 
 
+//7/9/2023 now doing CSS
 
 
 
