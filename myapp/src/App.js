@@ -3,7 +3,7 @@ import './App.css';
 
 
 
-
+//test comp was a component with simple h1 tags and the @email content from the vid but now it is converted to a prop for multiple instances of usage.
 const Testcomp = (args) => {
   return (
     <div>
@@ -32,11 +32,13 @@ function App() {
      Variables:
      <div>{testprop.name} <hr />{testprop.age} {testprop.email}</div>
       
-    <br /> <br /> component test:
+    <br /> <br /> component test[now converted to prop]:
       
-      <Testcomp />
+      <Testcomp name="Kishlay" age={11} email="@mail.com" />
+      <p>Use "" for strings and {} for divs.</p>
 
       Prop test: <br />
+
       <Userid label="Click me!" /><br /><br />
       <Userid label="DON'T" />  
 
@@ -60,7 +62,7 @@ const Userid = (props) => {
 //props
 const testprop = {
   name: "KK",
-  age: 11,
+  age: "nah",
   email:null,
 }
 
