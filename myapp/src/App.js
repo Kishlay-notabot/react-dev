@@ -52,6 +52,16 @@ function App() {
 //7/9/2023 now doing CSS
 
 
+//9/9/2023 conditional css/rendering
+const age = 20;
+if (age>=18) {
+  console.log("up")
+
+} else {
+  console.log("down")
+}
+
+age>= 18? console.log("hi") : console.log("on")
 
 
 
