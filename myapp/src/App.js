@@ -62,7 +62,10 @@ if (age>=18) {
 }
 
 age>= 18? console.log("hi") : console.log("on")
-
+test
+if (age>= 18) {
+  return <h1> up-age</h1>
+} else { return <div>d-age</div>}
 
 
 const Userid = (props) => {
