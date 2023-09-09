@@ -26,17 +26,11 @@ const Testcomp = (args) => {
 
 function App() {
   const age = 19;
-  if (age>= 18){
-    return <h1>welcome</h1>
-
-  }else{
-    return <h2>no</h2>
-  }
 
   return (
     <div className="App">
      Hello World!<br />
-
+    {age >= 18? <h1>up</h1>: <h2>small</h2>}
      Variables:
      <div>{testprop.name} <hr />{testprop.age} {testprop.email}</div>
       
