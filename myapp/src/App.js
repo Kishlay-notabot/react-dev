@@ -25,6 +25,14 @@ const Testcomp = (args) => {
 
 
 function App() {
+  const age = 17;
+  if (age>= 18){
+    return <h1>welcome</h1>
+
+  }else{
+    return <h2>no</h2>
+  }
+/*
   return (
     <div className="App">
      Hello World!<br />
@@ -44,15 +52,6 @@ function App() {
       <Userid label="its a prop!" />
 
 
-
-        
-      if (age >= 19){
-        return <div><h1>hi</h1></div>
-        } else {
-        return <h2>sorry</h2>
-        }
-
-
     </div>
   );
 };
@@ -63,7 +62,7 @@ function App() {
 
 //9/9/2023 conditional css/rendering
 
-const age = 19;
+
 const Userid = (props) => {
   return (
     <button>
@@ -78,6 +77,7 @@ const testprop = {
   email:null,
 }
 
-
+*/
 //hello
+}
 export default App;
