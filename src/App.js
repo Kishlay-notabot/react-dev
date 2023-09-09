@@ -25,13 +25,13 @@ const Testcomp = (args) => {
 
 
 function App() {
-  // const age = 17;
-  // if (age>= 18){
-  //   return <h1>welcome</h1>
+  const age = 19;
+  if (age>= 18){
+    return <h1>welcome</h1>
 
-  // }else{
-  //   return <h2>no</h2>
-  // }
+  }else{
+    return <h2>no</h2>
+  }
 
   return (
     <div className="App">
