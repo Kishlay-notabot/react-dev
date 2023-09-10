@@ -27,15 +27,14 @@ const Testcomp = (args) => {
 function App() {
   const age = 19;
   const isBlue = true;
+  const names = ["ak", "bk","kk"]
   return (
+    //51:03
     <div className="App">
      Hello World!<br />
     <h1 style={{color: isBlue? "blue": "red"}}>Hi there its blue if true</h1>
      conditional rendering:
     {age >= 18? <h1>up</h1>: <h2>small</h2>}
-
-
-
      Variables:
      <div>{testprop.name} <hr />{testprop.age} {testprop.email}</div>
       
