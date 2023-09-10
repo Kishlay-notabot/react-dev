@@ -32,6 +32,8 @@ function App() {
     //51:03
     <div className="App">
      Hello World!<br />
+     <p>{names[0]} is fetched from an array</p>
+     <p>{names[2]} is fetched from an array</p>
     <h1 style={{color: isBlue? "blue": "red"}}>Hi there its blue if true</h1>
      conditional rendering:
     {age >= 18? <h1>up</h1>: <h2>small</h2>}
