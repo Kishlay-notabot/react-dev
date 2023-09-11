@@ -32,8 +32,13 @@ function App() {
   // here we are using let because const cannot be re assigned but in the video it was running with const
   const isBlue = true;
   const names = ["ak", "bk","kk"];
+  const [inputValue, setIPvalue] = useState("")
+  const handleInputChange = (event) => {
+    setIPvalue(event.target.value)
+  }
   return (
     //51:03
+
     <div className="App">
      Hello World!<br />
      <p>{names[0]} is fetched from an array</p>
@@ -43,7 +48,8 @@ function App() {
     <p>{age}<button onClick={incage}>click</button> </p>
 
     {/* 11/9/23 states and hooks*/}
-
+    <input type='text'onChange={handleInputChange}/><br />
+    {inputValue}
     <h1 style={{color: isBlue? "blue": "red"}}>Hi there its blue if true</h1>
      conditional rendering:
     {age >= 18? <h1>up</h1>: <h2>small</h2>}
