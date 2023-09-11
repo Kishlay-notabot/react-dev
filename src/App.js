@@ -37,6 +37,7 @@ function App() {
     setIPvalue(event.target.value) //event.target.value is the value which is written inthe field, just like html getdocumentbyid like value fetching
   }
   const [showText, setShowText] = useState(true);
+  const [textColor, setColr] = useState('red');
   return (
     //51:03
 
@@ -52,11 +53,15 @@ function App() {
     <input type='text'onChange={handleInputChange}/><br /> {/* made a function handleinput change to execute the addition when change in text field is detected*/}
     {inputValue} <br />
     {/* code here */}
+    <button onClick={()=>{setColr(textColor === 'blue' ? 'red' : 'blue')}}>Change CSS properties using useState</button>
+    {/* ternary operators used above */}
+    <p style={{color:textColor}}>this text changes colors</p>
+
     {showText === true && <p>Hi this is peekaboo text click the below button</p>} {/* double ampersand is just "then" [this is another example of useState*/}
     <button onClick={()=>{setShowText(!showText)}}>hi</button> 
     {/* ! after a variable inverses its value or boolean outcome */}
 
-    {/* {()=>{this is an inline un-named function} 1:24:39*/}
+    {/* "{()=>{this is used to make an inline un-named function}" 1:24:39*/}
     <h1 style={{color: isBlue? "blue": "red"}}>Hi there its blue if true</h1>
      conditional rendering:
     {age >= 18? <h1>up</h1>: <h2>small</h2>}
