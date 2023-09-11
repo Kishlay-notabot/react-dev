@@ -1,4 +1,5 @@
 import './App.css';
+import { useState } from 'react';
 
 
 
@@ -25,13 +26,12 @@ const Testcomp = (args) => {
 
 
 function App() {
-  let age = 19;
-  const isBlue = true;
-  const names = ["ak", "bk","kk"]
   const incage = () => {
-    age = age+1;
-    console.log(age)
-  };
+  setAge(age = age+1);}
+  let [age, setAge] = useState(0); 
+  // here we are using let because const cannot be re assigned but in the video it was running with const
+  const isBlue = true;
+  const names = ["ak", "bk","kk"];
   return (
     //51:03
     <div className="App">
