@@ -56,7 +56,7 @@ function App() {
     <button onClick={()=>{setShowText(!showText)}}>hi</button> 
     {/* ! after a variable inverses its value or boolean outcome */}
 
-    {/* {()=>{this is an inline un-named function} */}
+    {/* {()=>{this is an inline un-named function} 1:24:39*/}
     <h1 style={{color: isBlue? "blue": "red"}}>Hi there its blue if true</h1>
      conditional rendering:
     {age >= 18? <h1>up</h1>: <h2>small</h2>}
