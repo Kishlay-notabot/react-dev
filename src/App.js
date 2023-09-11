@@ -25,9 +25,13 @@ const Testcomp = (args) => {
 
 
 function App() {
-  const age = 19;
+  let age = 19;
   const isBlue = true;
   const names = ["ak", "bk","kk"]
+  const incage = () => {
+    age = age+1;
+    console.log(age)
+  };
   return (
     //51:03
     <div className="App">
@@ -36,6 +40,10 @@ function App() {
      <p>{names[2]} is fetched from an array</p>
     {/* completed ep3 now doing hooks and states */}
     {/* click control +/ to comment out  */}
+    <p>{age}<button onClick={incage}>click</button> </p>
+
+    {/* 11/9/23 states and hooks*/}
+
     <h1 style={{color: isBlue? "blue": "red"}}>Hi there its blue if true</h1>
      conditional rendering:
     {age >= 18? <h1>up</h1>: <h2>small</h2>}
