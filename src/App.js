@@ -34,8 +34,9 @@ function App() {
   const names = ["ak", "bk","kk"];
   const [inputValue, setIPvalue] = useState("")
   const handleInputChange = (event) => {
-    setIPvalue(event.target.value)
+    setIPvalue(event.target.value) //event.target.value is the value which is written inthe field, just like html getdocumentbyid like value fetching
   }
+  const [showText, setShowText] = useState(true);
   return (
     //51:03
 
@@ -48,8 +49,14 @@ function App() {
     <p>{age}<button onClick={incage}>click</button> </p>
 
     {/* 11/9/23 states and hooks*/}
-    <input type='text'onChange={handleInputChange}/><br />
-    {inputValue}
+    <input type='text'onChange={handleInputChange}/><br /> {/* made a function handleinput change to execute the addition when change in text field is detected*/}
+    {inputValue} <br />
+    {/* code here */}
+    {showText === true && <p>Hi this is peekaboo text click the below button</p>} {/* double ampersand is just "then" [this is another example of useState*/}
+    <button onClick={()=>{setShowText(!showText)}}>hi</button> 
+    {/* ! after a variable inverses its value or boolean outcome */}
+
+    {/* {()=>{this is an inline un-named function} */}
     <h1 style={{color: isBlue? "blue": "red"}}>Hi there its blue if true</h1>
      conditional rendering:
     {age >= 18? <h1>up</h1>: <h2>small</h2>}
