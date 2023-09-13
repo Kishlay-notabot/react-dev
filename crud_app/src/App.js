@@ -6,7 +6,7 @@ function App() {
   const[newT, setT] = useState("");
   const addT = () =>{
   const newL = [...crudTodo, newT]
-  todoFunc(newL)
+  todoFunc(newL);
   }
   const inpchg = (event)=>{
     setT(event.target.value);
@@ -19,6 +19,10 @@ function App() {
       </div>
       <div className='list'>
         {/* {newT} to show task realtime while typing */}
+        {crudTodo.map((task)=> {
+          return <div>{task}</div>
+        })
+        }
       </div>
      </div>
   );
