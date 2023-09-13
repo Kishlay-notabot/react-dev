@@ -5,7 +5,8 @@ function App() {
   const [crudTodo, todoFunc] = useState([]);
   const[newT, setT] = useState("");
   const addT = () =>{
-
+  const newL = [...crudTodo, newT]
+  todoFunc(newL)
   }
   const inpchg = (event)=>{
     setT(event.target.value);
