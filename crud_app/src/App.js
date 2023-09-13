@@ -2,7 +2,12 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">1:31:xx
+    <div className="App">
+      <div className='inputs'><input /> 
+      <button>enter</button>
+      </div>
+
+      <div className='list'></div>
      </div>
   );
 }
