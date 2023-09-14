@@ -12,13 +12,9 @@ function App() {
     setT(event.target.value);
   }
   const delT = (taskName) =>{
-    const newTodo = crudTodo.filter((task) =>{
-    if (task ===taskName){
-      return false;}
-      else{
-        return true;}
-  });
+    const newTodo = crudTodo.filter((task) => task!== taskName);
   todoFunc(newTodo);};
+  // the mistake was in the line above 
 
   return (
     <div className="App">
@@ -28,7 +24,7 @@ function App() {
       <div className='list'>
         {/* {newT} to show task realtime while typing */}
         {crudTodo.map((task)=> {
-          return <div>{task}<button onClick={()=> delT(task)}>X</button></div> 
+          return <div>{task}<button onClick={()=> delT(task)}>x</button></div> 
           // using an inline func above
         })
         }
