@@ -18,7 +18,7 @@ function App() {
       else{
         return true;}
   });
-  setT(newTodo);};
+  todoFunc(newTodo);};
 
   return (
     <div className="App">
