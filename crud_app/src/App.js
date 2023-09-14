@@ -11,10 +11,13 @@ function App() {
   const inpchg = (event)=>{
     setT(event.target.value);
   }
-  const delT = (taskname) =>{
-    setT()
+  const delT = (taskName) =>{
+    const newTodo = crudTodo.filter((task) =>{
+    if (task ===taskName){
+      return false;}
 
-  }
+      else{return true}
+  });
 
   return (
     <div className="App">
