@@ -15,9 +15,10 @@ function App() {
     const newTodo = crudTodo.filter((task) =>{
     if (task ===taskName){
       return false;}
-
-      else{return true}
+      else{
+        return true;}
   });
+  setT(newTodo);};
 
   return (
     <div className="App">
