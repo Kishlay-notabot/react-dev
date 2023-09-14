@@ -10,8 +10,12 @@ function App() {
   }
   const inpchg = (event)=>{
     setT(event.target.value);
-  
   }
+  const delT = (taskname) =>{
+    setT()
+
+  }
+
   return (
     <div className="App">
       <div className='inputs'><input onChange={inpchg} /> 
@@ -20,7 +24,8 @@ function App() {
       <div className='list'>
         {/* {newT} to show task realtime while typing */}
         {crudTodo.map((task)=> {
-          return <div>{task}</div>
+          return <div>{task}<button onClick={()=> delT(task)}>X</button></div> 
+          // using an inline func above
         })
         }
       </div>
