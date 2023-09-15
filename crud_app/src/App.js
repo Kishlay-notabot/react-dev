@@ -5,14 +5,18 @@ function App() {
   const [crudTodo, todoFunc] = useState([]);
   const[newT, setT] = useState("");
   const addT = () =>{
+    const task = {
+      id: crudTodo.length === 0? 1: crudTodo[crudTodo.length-1].id+1,
+      taskName: newT,
+    }
   // const newL = [...crudTodo, newT] this was the original ver. watch before 1:45:00
   todoFunc([...crudTodo, newT]);
   }
   const inpchg = (event)=>{
     setT(event.target.value);
   }
-  const delT = (taskName) =>{
-    const newTodo = crudTodo.filter((task) => task!== taskName);
+  const delT = (id) =>{
+    const newTodo = crudTodo.filter((task) => task.id!== id);
   todoFunc(newTodo);};
   // the mistake was in the line above 
 
@@ -24,7 +28,7 @@ function App() {
       <div className='list'>
         {/* {newT} to show task realtime while typing */}
         {crudTodo.map((task)=> {
-          return <div>{task}<button onClick={()=> delT(task)}>x</button></div> 
+          return <div>{task.taskName}<button onClick={()=> delT(task.id)}>x</button></div> 
           // using an inline func above
         })
         }
