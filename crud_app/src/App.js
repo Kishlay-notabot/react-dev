@@ -3,38 +3,49 @@ import './App.css';
 
 function App() {
   const [crudTodo, todoFunc] = useState([]);
-  const[newT, setT] = useState("");
-  const addT = () =>{
-    const task = {
-      id: crudTodo.length === 0? 1: crudTodo[crudTodo.length-1].id+1,
-      taskName: newT,
+  const [newT, setT] = useState("");
+
+  const addT = () => {
+    if (newT.trim() === "") {
+      return; // Don't add empty tasks
     }
-  // const newL = [...crudTodo, newT] this was the original ver. watch before 1:45:00
-  todoFunc([...crudTodo, newT]);
+
+    const task = {
+      id: crudTodo.length === 0 ? 1 : crudTodo[crudTodo.length - 1].id + 1,
+      taskName: newT,
+    };
+
+    // Update the state with the new task object
+    todoFunc([...crudTodo, task]);
+// edit done above, the variable was changed 1:55:58
+    // Clear the input field
+    setT("");
   }
-  const inpchg = (event)=>{
+
+  const inpchg = (event) => {
     setT(event.target.value);
   }
-  const delT = (id) =>{
-    const newTodo = crudTodo.filter((task) => task.id!== id);
-  todoFunc(newTodo)};
-  // the mistake was in the line above 
-  // 15/9/2023 again in the above line extra colon 
+
+  const delT = (id) => {
+    const newTodo = crudTodo.filter((task) => task.id !== id);
+    todoFunc(newTodo);
+  };
 
   return (
     <div className="App">
-      <div className='inputs'><input onChange={inpchg} /> 
-      <button onClick={addT}>enter</button>
+      <div className='inputs'>
+        <input onChange={inpchg} value={newT} />
+        <button onClick={addT}>Enter</button>
       </div>
       <div className='list'>
-        {/* {newT} to show task realtime while typing */}
-        {crudTodo.map((task)=> {
-          return <div>{task.taskName}<button onClick={()=> delT(task.id)}>x</button></div> 
-          // using an inline func above
-        })
-        }
+        {crudTodo.map((task) => (
+          <div key={task.id}>
+            {task.taskName}
+            <button onClick={() => delT(task.id)}>x</button>
+          </div>
+        ))}
       </div>
-     </div>
+    </div>
   );
 }
 
