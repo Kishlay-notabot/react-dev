@@ -15,10 +15,6 @@ function App() {
   const inpchg = (event)=>{
     setT(event.target.value);
   }
-<<<<<<< HEAD
-  const delT = (id) =>{
-    const newTodo = crudTodo.filter((task) => task.id!== id);
-=======
   const delT = (taskName) =>{
     const newTodo = crudTodo.filter((task) =>{
     if (task ===taskName){
@@ -26,7 +22,6 @@ function App() {
       else{
         return true;}
   });
->>>>>>> parent of 86804f5 (crud optimised and completed)
   todoFunc(newTodo);};
 
   return (
@@ -37,11 +32,7 @@ function App() {
       <div className='list'>
         {/* {newT} to show task realtime while typing */}
         {crudTodo.map((task)=> {
-<<<<<<< HEAD
-          return <div>{task.taskName}<button onClick={()=> delT(task.id)}>x</button></div> 
-=======
           return <div>{task}<button onClick={()=> delT(task)}>X</button></div> 
->>>>>>> parent of 86804f5 (crud optimised and completed)
           // using an inline func above
         })
         }
