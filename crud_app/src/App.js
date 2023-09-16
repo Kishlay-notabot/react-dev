@@ -5,13 +5,18 @@ function App() {
   const [crudTodo, todoFunc] = useState([]);
   const[newT, setT] = useState("");
   const addT = () =>{
+    if (newT.trim() === "") {
+      return; 
+  }
     const task = {
       id: crudTodo.length === 0? 1: crudTodo[crudTodo.length-1].id+1,
       taskName: newT,
     }
   // const newL = [...crudTodo, newT] this was the original ver. watch before 1:45:00
-  todoFunc([...crudTodo, newT]);
+  todoFunc([...crudTodo, task]);
   }
+  // edit done above, the variable was changed 1:55:58
+  // setT(""); clears the input field [not added]
   const inpchg = (event)=>{
     setT(event.target.value);
   }
@@ -32,7 +37,7 @@ function App() {
       <div className='list'>
         {/* {newT} to show task realtime while typing */}
         {crudTodo.map((task)=> {
-          return <div>{task}<button onClick={()=> delT(task)}>X</button></div> 
+          return <div>{task.taskName}<button onClick={()=> delT(task)}>X</button></div> 
           // using an inline func above
         })
         }
