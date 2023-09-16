@@ -15,10 +15,19 @@ function App() {
   const inpchg = (event)=>{
     setT(event.target.value);
   }
+<<<<<<< HEAD
   const delT = (id) =>{
     const newTodo = crudTodo.filter((task) => task.id!== id);
+=======
+  const delT = (taskName) =>{
+    const newTodo = crudTodo.filter((task) =>{
+    if (task ===taskName){
+      return false;}
+      else{
+        return true;}
+  });
+>>>>>>> parent of 86804f5 (crud optimised and completed)
   todoFunc(newTodo);};
-  // the mistake was in the line above 
 
   return (
     <div className="App">
@@ -28,7 +37,11 @@ function App() {
       <div className='list'>
         {/* {newT} to show task realtime while typing */}
         {crudTodo.map((task)=> {
+<<<<<<< HEAD
           return <div>{task.taskName}<button onClick={()=> delT(task.id)}>x</button></div> 
+=======
+          return <div>{task}<button onClick={()=> delT(task)}>X</button></div> 
+>>>>>>> parent of 86804f5 (crud optimised and completed)
           // using an inline func above
         })
         }
