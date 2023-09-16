@@ -6,6 +6,7 @@ function App() {
   const [newT, setT] = useState("");
 
   const addT = () => {
+    // newT trim function removes whitespaces and empty tasks
     if (newT.trim() === "") {
       return; // Don't add empty tasks
     }
