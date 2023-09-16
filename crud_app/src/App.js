@@ -17,9 +17,8 @@ function App() {
   }
   const delT = (id) =>{
     const newTodo = crudTodo.filter((task) => task.id!== id);
-  todoFunc(newTodo)};
+  todoFunc(newTodo);};
   // the mistake was in the line above 
-  // 15/9/2023 again in the above line extra colon 
 
   return (
     <div className="App">
