@@ -22,7 +22,7 @@ function App() {
       else{
         return true;}
   });
-  todoFunc(newTodo);};
+  setT(newTodo);};
 
   return (
     <div className="App">
