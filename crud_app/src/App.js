@@ -6,6 +6,7 @@ function App() {
   const [newT, setT] = useState("");
 
   const addT = () => {
+    // newT trim function removes whitespaces and empty tasks
     if (newT.trim() === "") {
       return; // Don't add empty tasks
     }
@@ -17,7 +18,7 @@ function App() {
 
     // Update the state with the new task object
     todoFunc([...crudTodo, task]);
-
+// edit done above, the variable was changed 1:55:58
     // Clear the input field
     setT("");
   }
@@ -26,28 +27,24 @@ function App() {
     setT(event.target.value);
   }
 
-  const delT = (id) => { // Change function parameter
+  const delT = (id) => {
     const newTodo = crudTodo.filter((task) => task.id !== id);
-
-    // Update the state with the filtered array
     todoFunc(newTodo);
   };
 
   return (
     <div className="App">
       <div className='inputs'>
-        <input onChange={inpchg} /> 
-        <button onClick={addT}>enter</button>
+        <input onChange={inpchg} value={newT} />
+        <button onClick={addT}>Enter</button>
       </div>
       <div className='list'>
-        {crudTodo.map((task) => {
-          return (
-            <div key={task.id}>
-              {task.taskName}
-              <button onClick={() => delT(task.id)}>X</button>
-            </div>
-          );
-        })}
+        {crudTodo.map((task) => (
+          <div key={task.id}>
+            {task.taskName}
+            <button onClick={() => delT(task.id)}>x</button>
+          </div>
+        ))}
       </div>
     </div>
   );
