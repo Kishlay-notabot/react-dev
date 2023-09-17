@@ -3,46 +3,53 @@ import './App.css';
 
 function App() {
   const [crudTodo, todoFunc] = useState([]);
-  const[newT, setT] = useState("");
-  const addT = () =>{
+  const [newT, setT] = useState("");
+
+  const addT = () => {
     if (newT.trim() === "") {
-      return; 
-  }
-    const task = {
-      id: crudTodo.length === 0? 1: crudTodo[crudTodo.length-1].id+1,
-      taskName: newT,
+      return; // Don't add empty tasks
     }
-  // const newL = [...crudTodo, newT] this was the original ver. watch before 1:45:00
-  todoFunc([...crudTodo, task]);
+
+    const task = {
+      id: crudTodo.length === 0 ? 1 : crudTodo[crudTodo.length - 1].id + 1,
+      taskName: newT,
+    };
+
+    // Update the state with the new task object
+    todoFunc([...crudTodo, task]);
+
+    // Clear the input field
+    setT("");
   }
-  // edit done above, the variable was changed 1:55:58
-  // setT(""); clears the input field [not added]
-  const inpchg = (event)=>{
+
+  const inpchg = (event) => {
     setT(event.target.value);
   }
-  const delT = (taskName) =>{
-    const newTodo = crudTodo.filter((task) =>{
-    if (task ===taskName){
-      return false;}
-      else{
-        return true;}
-  });
-  setT(newTodo);};
+
+  const delT = (id) => { // Change function parameter
+    const newTodo = crudTodo.filter((task) => task.id !== id);
+
+    // Update the state with the filtered array
+    todoFunc(newTodo);
+  };
 
   return (
     <div className="App">
-      <div className='inputs'><input onChange={inpchg} /> 
-      <button onClick={addT}>enter</button>
+      <div className='inputs'>
+        <input onChange={inpchg} /> 
+        <button onClick={addT}>enter</button>
       </div>
       <div className='list'>
-        {/* {newT} to show task realtime while typing */}
-        {crudTodo.map((task)=> {
-          return <div>{task.taskName}<button onClick={()=> delT(task)}>X</button></div> 
-          // using an inline func above
-        })
-        }
+        {crudTodo.map((task) => {
+          return (
+            <div key={task.id}>
+              {task.taskName}
+              <button onClick={() => delT(task.id)}>X</button>
+            </div>
+          );
+        })}
       </div>
-     </div>
+    </div>
   );
 }
 
