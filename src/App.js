@@ -62,20 +62,9 @@ function App() {
     {/* ! after a variable inverses its value or boolean outcome */}
 
     {/* "{()=>{this is used to make an inline un-named function}" 1:24:39*/}
-    
 
 
-
-
-
-
-
-
-
-
-
-
-
+    {/* code complete working on crud app now */}
     <h1 style={{color: isBlue? "blue": "red"}}>Hi there its blue! if true</h1>
      conditional rendering:
     {age >= 18? <h1>up</h1>: <h2>small</h2>}
