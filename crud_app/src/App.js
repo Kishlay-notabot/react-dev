@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import './index.css';
 
 function App() {
   const [crudTodo, todoFunc] = useState([]);
@@ -35,12 +36,15 @@ function App() {
   return (
     <div className="App">
       <div className='inputs'>
-        <input onChange={inpchg} value={newT} />
+      <div className='container'><div className='morphism'>
+        <input onChange={inpchg} value={newT} /></div></div>
         <button onClick={addT}>Enter</button>
+        
       </div>
+
       <div className='list'>
         {crudTodo.map((task) => (
-          <div key={task.id}>
+         <div key={task.id}>
             {task.taskName}
             <button onClick={() => delT(task.id)}>x</button>
           </div>

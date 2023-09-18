@@ -1,7 +1,24 @@
 .App {
   text-align: center;
 }
-
+.morphism{
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 200px );
+-webkit-backdrop-filter: blur( 3.5px );
+border-radius: 10px;
+border: 1px solid #000;
+padding-bottom: 200px;
+padding-top: 200px;
+padding-left: 100px;
+padding-right: 100px;
+box-sizing: border-box;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Adjust this value to control the container's height */
+  height: 100vh;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
