@@ -37,11 +37,12 @@ function App() {
     <div className="App">
       <div className='inputs'>
       <div className='container'><div className='morphism'>
-        <input onChange={inpchg} value={newT} /></div></div>
+        <input onChange={inpchg} value={newT} />
         <button onClick={addT}>Enter</button>
         
       </div>
-
+      </div>
+      </div>
       <div className='list'>
         {crudTodo.map((task) => (
          <div key={task.id}>
@@ -50,6 +51,7 @@ function App() {
           </div>
         ))}
       </div>
+      
     </div>
   );
 }
