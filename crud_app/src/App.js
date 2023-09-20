@@ -19,7 +19,7 @@ function App() {
 
     // Update the state with the new task object
     todoFunc([...crudTodo, task]);
-// edit done above, the variable was changed 1:55:58
+
     // Clear the input field
     setT("");
   }
@@ -33,25 +33,45 @@ function App() {
     todoFunc(newTodo);
   };
 
+  const containerStyle = {
+    position: 'relative',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  };
+
+  const blackDivStyle = {
+    backgroundColor: 'black',
+    width: 'calc(100% + 20px)', // Wider by 10px on each side
+    height: '80px', // You can adjust the height as needed
+    position: 'absolute',
+    top: '50%', // Center it vertically
+    left: '50%', // Center it horizontally
+    transform: 'translate(-50%, -50%)', // Center it perfectly
+    zIndex: -1, // Place it behind other content
+  };
+
   return (
     <div className="App">
       <div className='inputs'>
-      <div className='container'><div className='morphism'>
-        <input onChange={inpchg} value={newT} />
-        <button onClick={addT}>Enter</button>
-        
-      </div>
-      </div>
+        <div style={containerStyle}>
+          <div className='container'>
+            <div className='morphism'>
+              <input onChange={inpchg} value={newT} />
+              <button onClick={addT}>Enter</button>
+            </div>
+            <div style={blackDivStyle}></div> {/* Black div */}
+          </div>
+        </div>
       </div>
       <div className='list'>
         {crudTodo.map((task) => (
-         <div key={task.id}>
+          <div key={task.id}>
             {task.taskName}
             <button onClick={() => delT(task.id)}>x</button>
           </div>
         ))}
       </div>
-      
     </div>
   );
 }
