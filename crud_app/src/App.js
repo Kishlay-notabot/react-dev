@@ -59,7 +59,6 @@ function App() {
           <input onChange={inpchg} value={newT} />
           <button onClick={addT}>Enter</button>
         </div>
-        <div style={blackDivStyle}></div> {/* Black div */}
       </div>
     </div>
   </div>

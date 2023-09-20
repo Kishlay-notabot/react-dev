@@ -2,8 +2,8 @@
   text-align: center;
 }
 .morphism{
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 47px );
+box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+backdrop-filter: blur( 7px );
 -webkit-backdrop-filter: blur( 3.5px );
 border-radius: 10px;
 border: 1px solid #000;
