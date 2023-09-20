@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import './index.css';
+import {} from './task'
 
 function App() {
   const [crudTodo, todoFunc] = useState([]);
@@ -52,28 +53,7 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <div className='inputs'>
-        <div style={containerStyle}>
-          <div className='container'>
-            <div className='morphism'>
-              <input onChange={inpchg} value={newT} />
-              <button onClick={addT}>Enter</button>
-            </div>
-            <div style={blackDivStyle}></div> {/* Black div */}
-          </div>
-        </div>
-      </div>
-      <div className='list'>
-        {crudTodo.map((task) => (
-          <div key={task.id}>
-            {task.taskName}
-            <button onClick={() => delT(task.id)}>x</button>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+    <Task />);
 }
 
 export default App;
