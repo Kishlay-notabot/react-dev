@@ -51,6 +51,9 @@ function App() {
     zIndex: -1, // Place it behind other content
   };
 
+  
+  const renderStartTime = performance.now();
+
   return (<div className="App">
   <div className='inputs'>
     <div style={containerStyle}>
@@ -73,6 +76,14 @@ function App() {
 </div>);
 
 // 2:02:28 20/9/2023
+
+// crud module complete from video 21/9/2023
+const renderEndTime = performance.now();
+
+const renderLag = renderEndTime - renderStartTime;
+// 
+console.log(`Render lag: ${renderLag}ms`);
+console.log('hi');
 }
 
 export default App;
