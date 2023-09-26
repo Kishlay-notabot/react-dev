@@ -78,6 +78,8 @@ function App() {
 // 2:02:28 20/9/2023
 
 // crud module complete from video 21/9/2023
+
+//26/9/2023 completed crud module ending started useEffect hook
 const renderEndTime = performance.now();
 
 const renderLag = renderEndTime - renderStartTime;
