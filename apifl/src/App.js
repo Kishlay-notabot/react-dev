@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Axios from "axios"; 
+import { useState } from 'react';
 
 
 function App() {
@@ -8,10 +9,13 @@ function App() {
 // .then((data) => {
 //   console.log(data)
 // });
+const[catFact, setCatfact] = useState("");
 
 Axios.get("https://catfact.ninja/fact").then((res)=> {
-  console.log(res.data);
+  setCatfact(res.data.fact);
+   //the .fact is included as it is an object as a whole with a fact property in it 
 });
+
   return (
     <div className="App">
       <header className="App-header">
@@ -21,7 +25,7 @@ Axios.get("https://catfact.ninja/fact").then((res)=> {
       <br /><button> catfact
         fetchapi
       </button>
-      <p> </p>
+      <p>{catFact}</p>
       </header>
     </div>
   );
