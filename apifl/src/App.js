@@ -11,10 +11,14 @@ function App() {
 // });
 const[catFact, setCatfact] = useState("");
 useEffect(()=> {
+
+
   Axios.get("https://catfact.ninja/fact").then((res)=> {
   setCatfact(res.data.fact);
   console.log('fact fetched lol')
    //the .fact is included as it is an object as a whole with a fact property in it 
+
+   
 });
   
 },[]);
