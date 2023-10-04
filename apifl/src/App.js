@@ -10,9 +10,8 @@ function App() {
 //   console.log(data)
 // });
 const[catFact, setCatfact] = useState("");
-useEffect(()=> {
 
-
+const fetchCF = () => {
   Axios.get("https://catfact.ninja/fact").then((res)=> {
   setCatfact(res.data.fact);
   console.log('fact fetched lol')
@@ -20,8 +19,7 @@ useEffect(()=> {
 
    
 });
-  
-},[]);
+}
 
 
 
@@ -31,7 +29,7 @@ useEffect(()=> {
         <img src={logo} className="App-logo" alt="logo" />
       <br /> Hello
 
-      <br /><button> catfact
+      <br /><button onClick={fetchCF}> catfact
         fetchapi
       </button>
       <p>{catFact}</p>
