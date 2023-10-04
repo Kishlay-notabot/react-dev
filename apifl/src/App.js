@@ -21,6 +21,10 @@ const fetchCF = () => {
 });
 }
 
+useEffect(() => {
+  fetchCF();
+}, []);
+
 
 
   return (
