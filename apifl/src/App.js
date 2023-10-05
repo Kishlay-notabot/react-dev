@@ -5,41 +5,9 @@ import { useEffect, useState } from 'react';
 
 
 function App() {
-//   fetch("https://catfact.ninja/fact").then((res) => res.json())
-// .then((data) => {
-//   console.log(data)
-// });
-const[catFact, setCatfact] = useState("");
-
-const fetchCF = () => {
-  Axios.get("https://catfact.ninja/fact").then((res)=> {
-  setCatfact(res.data.fact);
-  console.log('fact fetched lol')
-   //the .fact is included as it is an object as a whole with a fact property in it 
-
-   
-});
-}
-
-useEffect(() => {
-  fetchCF();
-}, []);
-
-
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      <br /> Hello
-
-      <br /><button onClick={fetchCF}> catfact
-        fetchapi
-      </button>
-      <p>{catFact}</p>
-      </header>
-    </div>
-  );
+  <div className='App'>
+    <button>Predict_age</button>
+  </div>
 }
 
 export default App;
