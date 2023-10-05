@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 function App() {
   const [name,setName] = useState("")
   const fetchD= () => {
-    Axios.get("https://api.agify.io/?name=")
+    Axios.get(`https://api.agify.io/?name=${name}`).then((res) => {console.log(res.data)});
 
   }
   <div className='App'>
