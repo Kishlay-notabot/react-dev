@@ -1,8 +1,7 @@
 import './App.css';
+// import logo css
 import Axios from "axios"; 
 import { useEffect, useState } from 'react';
-
-
 function App() {
   console.log('rendered')
   const [predAge, setpredAge] = useState(null);
