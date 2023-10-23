@@ -14,3 +14,5 @@ function App() {
 
 export default App;
 // module 7 complete 
+// bug fixed because of react-router-dom installed in wrong folder
+// REACTAPPS ARE NOT GLOBAL 
