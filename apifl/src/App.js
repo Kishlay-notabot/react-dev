@@ -13,6 +13,7 @@ function App() {
     <Route path='/home' element={<Home />}/>
     <Route path='/ct' element={<Contact />}/>
     <Route path='/ab' element={<About />}/> 
+    <Route path='*' element={<h4>ERROR 404</h4>} />
     
     </Routes>
   </Router>
@@ -25,3 +26,5 @@ export default App;
 // bug fixed because of react-router-dom installed in wrong folder
 // REACTAPPS ARE NOT GLOBAL 
 // localhost:3000/home 
+//react routes are like web pages
+// * is the 404 page 
