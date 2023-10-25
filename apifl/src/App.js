@@ -27,4 +27,6 @@ export default App;
 // REACTAPPS ARE NOT GLOBAL 
 // localhost:3000/home 
 //react routes are like web pages
+
+//HELLO THIS IS KISHLAY
 // * is the 404 page 
