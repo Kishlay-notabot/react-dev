@@ -3,12 +3,16 @@ import { Contact } from './pages/contact';
 import { About } from './pages/about';
 
 import './App.css';
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom'
 function App() {
   return(
   <div className='App'> 
 
   <Router>
+    <div>navbar
+    <Link to="/home"> home </Link> 
+    <Link to="/ab"> about </Link> 
+    <Link to="/ct"> contact </Link> </div>
     <Routes> 
     <Route path='/home' element={<Home />}/>
     <Route path='/ct' element={<Contact />}/>
@@ -28,5 +32,4 @@ export default App;
 // localhost:3000/home 
 //react routes are like web pages
 
-//HELLO THIS IS KISHLAY
 // * is the 404 page 
