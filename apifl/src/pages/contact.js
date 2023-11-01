@@ -1,5 +1,5 @@
-export const Profile = ()=> {
-    return<h1>Profile</h1>
+export const Profile = (props)=> {
+    return<h1> Profile = {props.username}</h1>
 };
 export const ChangeProfile = () => {
 
