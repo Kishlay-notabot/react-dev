@@ -15,7 +15,7 @@ function App() {
     <Nav />
     <Routes> 
     <Route path='/home' element={<Home  username={username}/>}/>
-    <Route path='/pf' element={<Profile username={username}/>}/>
+    <Route path='/pf' element={<Profile username={username} setUsern={setUsern}/>}/>
     <Route path='/ab' element={<About />}/> 
     <Route path='*' element={<h4>ERROR 404</h4>} />
     
