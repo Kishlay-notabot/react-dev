@@ -2,7 +2,7 @@ import { Home } from './pages/Home';
 import { Profile } from './pages/contact';
 import { About } from './pages/about';
 import { Nav } from './pages/navbar';
-
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
 import './App.css';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import { useState, useContext, createContext } from 'react';
@@ -13,9 +13,11 @@ import { useState, useContext, createContext } from 'react';
 
 export const  AppContext = createContext();
 function App() {
+  const client = new QueryClient ();
   const [username, setUsern] = useState("KishlUser");
   return(
   <div className='App'> 
+  <QueryClientProvider client={client}>
   <AppContext.Provider value={{username, setUsern}}>
   <Router>
     <Nav />
@@ -28,6 +30,7 @@ function App() {
     </Routes>
   </Router>
   </AppContext.Provider>
+  </QueryClientProvider>
   </div>
   )
 }
