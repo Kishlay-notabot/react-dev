@@ -1,23 +1,16 @@
-import './App.css';
-import Axios from 'axios'
-import { useQuery } from "@tanstack/react-query";
-function App() {
-  // const { data } = useQuery(["cat"], () => {
-  //   return Axios.get("https://catfact.ninja/facts").then((res) => res.data);
-  // })
+import { useQuery } from '@tanstack/react-query';
+import Axios from "axios"
+
+
+export const Home = () => {
+  const { data } = useQuery(["cat"],() => {
+    return Axios.get("https://catfact.ninja/fact").then((res) => res.data);
+  
+  });
+
   return (
-
-    <div className="App">
-      hi
-      {/* <p>{data?.fact}</p> */} 
-
-    <p>sdfs
-      lol</p>
-      
-
-
-    </div>
-  );
+    <h1>
+      HOPE <p>{data?.fact}</p>
+    </h1>
+  )
 }
-
-export default App;
