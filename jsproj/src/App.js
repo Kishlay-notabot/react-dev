@@ -1,27 +1,26 @@
-import { useQuery, QueryClient, QueryClientProvider } from "react-query";
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 import Axios from 'axios';
 
 const queryClient = new QueryClient();
 
-export const Home = () => {
-  const { data } = useQuery({
-    queryKey: ["cat"],
-    queryFn: () => {
-      return Axios.get("https://catfact.ninja/fact").then((res) => res.data);
-    }
+const CatFact = () => {
+  const { data } = useQuery('catFact', async () => {
+    const response = await Axios.get('https://catfact.ninja/fact');
+    return response.data;
   });
 
   return (
-    <h2>HOPE
-      <p> {data?.fact} </p>
-    </h2>
+    <div>
+      <h2>Cat Fact</h2>
+      {data ? <p>{data.fact}</p> : <p>Loading...</p>}
+    </div>
   );
 };
 
-const HomeWithQueryClient = () => (
-  <QueryClientProvider client={queryClient}>
-    <Home />
-  </QueryClientProvider>
-);
-
-export default HomeWithQueryClient;
+export default function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <CatFact />
+    </QueryClientProvider>
+  );
+}
