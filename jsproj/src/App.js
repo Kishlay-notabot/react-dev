@@ -3,14 +3,14 @@ import Axios from "axios"
 
 
 export const Home = () => {
-  // const { data } = useQuery(["cat"],() => {
-  //   return Axios.get("https://catfact.ninja/fact").then((res) => res.data);
+  const { data } = useQuery(["cat"],() => {
+    return Axios.get("https://catfact.ninja/fact").then((res) => res.data);
   
-  // });
+  });
 
   return (
     <h1>
-      {/* HOPE <p>{data?.fact}</p> */}
+      HOPE <p>{data?.fact}</p>
 
       <p>code not working</p> 
     </h1>
