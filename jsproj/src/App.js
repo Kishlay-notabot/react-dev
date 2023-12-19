@@ -1,5 +1,7 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, QueryClient, QueryClientProvider } from "react-query";
 import Axios from 'axios';
+
+const queryClient = new QueryClient();
 
 export const Home = () => {
   const { data } = useQuery({
@@ -15,3 +17,11 @@ export const Home = () => {
     </h2>
   );
 };
+
+const HomeWithQueryClient = () => (
+  <QueryClientProvider client={queryClient}>
+    <Home />
+  </QueryClientProvider>
+);
+
+export default HomeWithQueryClient;
