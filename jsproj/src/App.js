@@ -1,18 +1,18 @@
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
-import Axios from 'axios';
 
 const queryClient = new QueryClient();
 
 const CatFact = () => {
-  const { data } = useQuery('catFact', async () => {
-    const response = await Axios.get('https://catfact.ninja/fact');
-    return response.data;
-  });
+  const { data, status } = useQuery('catFact', () =>
+    fetch('https://catfact.ninja/fact').then((res) => res.json())
+  );
 
   return (
     <div>
       <h2>Cat Fact</h2>
-      {data ? <p>{data.fact}</p> : <p>Loading...</p>}
+      {status === 'loading' && <p>Loading...</p>}
+      {status === 'error' && <p>Error fetching cat fact</p>}
+      {status === 'success' && <p>{data.fact}</p>}
     </div>
   );
 };
