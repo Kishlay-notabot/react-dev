@@ -1,24 +1,16 @@
-import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
+import { useQuery } from "@tanstack/react-query";
+import Axios from "axios";
 
-const queryClient = new QueryClient();
-
-const CatFact = () => {
-  const { data } = useQuery('catFact', () =>
-    fetch('https://catfact.ninja/fact').then((res) => res.json())
-  );
-
+export const Home = () => {
+  const { data } = useQuery({
+    queryKey: ["cat"],
+    queryFn: () => {
+      return Axios.get("https://catfact.ninja/fact").then((res) => res.data);
+  }})
   return (
-    <div>
-      <h2>Cat Fact</h2>
+    <h1>HOPE
       <p>{data?.fact}</p>
-    </div>
+
+    </h1>
   );
 };
-
-export default function App() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <CatFact />
-    </QueryClientProvider>
-  );
-}
