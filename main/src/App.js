@@ -13,7 +13,7 @@ function App() {
        return Axios.get("https://catfact.ninja/fact").then((res) => res.data);
        
       },
-      //...<Task
+      //...
     });
   
     return (
