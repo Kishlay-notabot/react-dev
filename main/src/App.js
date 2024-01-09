@@ -1,9 +1,12 @@
+import { Form } from "./Form"
+
 function App() {
   
 
   return (
     <div>
-      {/* Other components or JSX */}
+      {/* Other components or JSX */} hi
+      <Form />
     </div>
   );
 }
