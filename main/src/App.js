@@ -6,24 +6,25 @@ import Axios from "axios";
 function App() {
   console.log('hi')
   console.log('imported')
+  
+  const { data, isLoading, isError, refetch } = useQuery({
+    queryKey: ["cat"],
+    queryFn: () => {
+      return Axios.get("https://catfact.ninja/fact").then((res) => res.data);
+    },
+    //...
+  });
+
   const Task = () => {
-    const { data, isLoading, isError, refetch } = useQuery({
-      queryKey: ["cat"],
-      queryFn: () => {
-       return Axios.get("https://catfact.ninja/fact").then((res) => res.data);
-       
-      },
-      //...
-    });
     if (isError) {
       return <h1>error lol</h1>
     }
-  if (isLoading) {
-    return <h2>Loading...</h2>
-  }
+    if (isLoading) {
+      return <h2>Loading...</h2>
+    }
     return (
       <h1>
-       Hi there
+        Hi there
         <p>{data?.fact}!</p>
       </h1>
     );
@@ -33,7 +34,7 @@ function App() {
     <div>
       {/* Other components or JSX */}
       <Task />
-      <button onClick={() => { refetch }}>fetch new</button>
+      <button onClick={refetch}>fetch new</button>
     </div>
   );
 }
