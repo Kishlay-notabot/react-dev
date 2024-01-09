@@ -7,7 +7,7 @@ function App() {
   console.log('hi')
   console.log('imported')
   
-  const { data, isLoading, isError, refetch } = useQuery({
+  const { data: catD, isLoading, isError, refetch } = useQuery({
     queryKey: ["cat"],
     queryFn: () => {
       return Axios.get("https://catfact.ninja/fact").then((res) => res.data);
@@ -25,7 +25,8 @@ function App() {
     return (
       <h1>
         Hi there
-        <p>{data?.fact}!</p>
+        <p>{catD?.fact}!</p>
+        <p>  <img src={logo} className='App-logo' alt='logo' /></p>
       </h1>
     );
   };
