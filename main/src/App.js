@@ -7,7 +7,7 @@ function App() {
   console.log('hi')
   console.log('imported')
   const Task = () => {
-    const { data, isLoading, isError } = useQuery({
+    const { data, isLoading, isError, refetch } = useQuery({
       queryKey: ["cat"],
       queryFn: () => {
        return Axios.get("https://catfact.ninja/fact").then((res) => res.data);
@@ -23,8 +23,8 @@ function App() {
   }
     return (
       <h1>
-        HOPE
-        <p>{data?.fact} HI</p>
+       Hi there
+        <p>{data?.fact}!</p>
       </h1>
     );
   };
@@ -33,6 +33,7 @@ function App() {
     <div>
       {/* Other components or JSX */}
       <Task />
+      <button onClick={() => { refetch }}>fetch new</button>
     </div>
   );
 }
