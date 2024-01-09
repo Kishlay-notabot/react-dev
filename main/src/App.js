@@ -7,7 +7,7 @@ function App() {
   console.log('hi')
   console.log('imported')
   const Task = () => {
-    const { data } = useQuery({
+    const { data, isLoading, isError } = useQuery({
       queryKey: ["cat"],
       queryFn: () => {
        return Axios.get("https://catfact.ninja/fact").then((res) => res.data);
@@ -15,7 +15,12 @@ function App() {
       },
       //...
     });
-  
+    if (isError) {
+      return <h1>error lol</h1>
+    }
+  if (isLoading) {
+    return <h2>Loading...</h2>
+  }
     return (
       <h1>
         HOPE
