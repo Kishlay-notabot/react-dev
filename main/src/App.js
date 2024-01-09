@@ -39,5 +39,5 @@ function App() {
     </div>
   );
 }
-
+// react query module complete 
 export default App;
