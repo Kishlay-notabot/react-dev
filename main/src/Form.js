@@ -12,7 +12,7 @@ export const Form = () => {
 
         }
     )
-    const { register, handleSubmit } = useForm({
+    const { register, handleSubmit, formState: {errors} } = useForm({
         resolver: yupResolver(schema),
     });
 
@@ -24,6 +24,7 @@ export const Form = () => {
     return(
         <form onSubmit={handleSubmit(onSubmit)}>
             <input type="text" placeholder="Name" {...register("fName")} /> <br />
+            <p>{errors.fName?.message}4:14:49</p>
             <input type="text" placeholder="Email" {...register("email")}/> <br />
             <input type="password" placeholder="Pass"{...register("passwd")} /> <br />
             <input type="password" placeholder="confirmPass"{...register("rePasswd")} /> <br />
