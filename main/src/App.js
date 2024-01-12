@@ -7,11 +7,12 @@ function App() {
     <div className="App">
       {/* Other components or JSX */} hi
       <button onClick={()=>{setVis((prev) => !prev)}}>
+         {/* 4:19:39 */}
           
           {isVis ? "Hide" :"Show"}
 
       </button>
-    {isVis && <h1>Hiddentex</h1>}
+    {isVis && <h1>Hidden text</h1>}
     </div>
   );
 }
