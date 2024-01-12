@@ -6,9 +6,9 @@ export const Form = () => {
         {
             fName: yup.string().required("Enter Full Name first!"),
             email: yup.string().email().required("enter correct email add!"),
-            passwd: yup.string().min(7).max(14).required("enter passwd between 7-14 char!"),
+            passwd: yup.string().min(7).max(14).required("passwd between 7-14 char!"),
             // age: yup.number().positive().integer().min(18).required() [template for age]
-            rePasswd: yup.string().oneOf([yup.ref("passwd"), null]).required("passwd should match!"),
+            rePasswd: yup.string().oneOf([yup.ref("passwd"), null],"passwd should match!")
 
         }
     )
