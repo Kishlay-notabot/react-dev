@@ -1,14 +1,18 @@
-import { Form } from "./Form"
-
+import "./App.css";
+import { useState } from "react";
 function App() {
-  
+  const [isVis,setVis] = useState(false);
 
   return (
-    <div>
+    <div className="App">
       {/* Other components or JSX */} hi
-      <Form />
+      <button onClick={()=>{setVis((prev) => !prev)}}>
+          
+          {isVis ? "Hide" :"Show"}
+
+      </button>
+    {isVis && <h1>Hiddentex</h1>}
     </div>
   );
 }
-// react query module complete 
 export default App;
