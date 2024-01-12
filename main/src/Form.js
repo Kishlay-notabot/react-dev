@@ -33,6 +33,7 @@ export const Form = () => {
             <input type="password" placeholder="confirmPass"{...register("rePasswd")} /> 
            <p>{errors.rePasswd?.message}<br /></p> 
             <input type="submit"/>
+            <p>Form module complete!!!</p>
         </form>
     )
 }
