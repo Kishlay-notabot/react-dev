@@ -7,7 +7,7 @@ function App() {
   const [textR, setTextres] = useState("result text will appear here");
 
   const performOCR = () => {
-    recognize(selectedImg, 'jpn', {
+    recognize(selectedImg, 'hin', {
       logger: (e) => console.log(e),
       tessedit_pageseg_mode: 'SINGLE_CHAR', // Note: Use the string value directly
     })
