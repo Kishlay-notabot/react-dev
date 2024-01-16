@@ -7,12 +7,12 @@ function App() {
   const [textR, setTextres] = useState("result text will appear here");
 
   const performOCR = () => {
-    recognize(selectedImg, 'hin', {
+    recognize(selectedImg, 'jpn', {
       logger: (e) => console.log(e),
       tessedit_pageseg_mode: 'SINGLE_CHAR', // Note: Use the string value directly
     })
       .then((out) => {
-        console.log(out);
+        console.log(out, out.data.confidence);
         setTextres(out.data.text);
       })
       .catch((error) => console.error('Error during OCR:', error));
