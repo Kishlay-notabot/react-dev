@@ -9,15 +9,15 @@ function App() {
   }
   return (
     <div className="App">
-      <p>Hi</p>
+      <span>Hi</span>
       <p><label htmlFor='upload'>Upload</label>
       <input type='file' id='upload' accept='image/*' onChange={handleChange} />
       
       
       {selectedImg && (
-        <div className='box-img'>
+        <span className='box-img'>
           <img src={selectedImg} alt='thumb' />
-        </div>
+        </span>
       )}
       
       
