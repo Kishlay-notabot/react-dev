@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  max-width: 970px;
+  margin: 0 auto;
 }
 
 .App-logo {
@@ -7,6 +9,9 @@
   pointer-events: none;
 }
 
+.input-wrapper{
+  position: relative;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
