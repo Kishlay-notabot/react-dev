@@ -1,5 +1,4 @@
-<!-- create react app android for clock widget
-
+<!-- create react app android for clock widget -->
 
 <!DOCTYPE html>
 <html>
@@ -13,13 +12,13 @@
       height: 400px;
       margin: 50px auto;
       font-size: 24px;
-      border:solid
+      border: 1px solid black; /* Add border style */
     }
     .hour-line, .minute-line, .second-line {
       position: absolute;
       transform-origin: 50% 100%;
-      padding-bottom:15%;
-      left:50%;
+      padding-bottom: 15%;
+      left: 50%;
     }
     .hour-line {
       width: 6px;
@@ -36,7 +35,6 @@
       height: 100px;
       top: 25px;
     }
-    
   </style>
 </head>
 <body>
@@ -53,7 +51,6 @@
     <div class="clock_number">00</div>
     <div class="clock_number">00</div>
     <div class="clock_number">00</div>
-
   </div>
   <div class="second-line" id="secondLine">
     <div class="clock_number">00</div>
@@ -62,16 +59,18 @@
     <div class="clock_number">00</div>
     <div class="clock_number">00</div>
     <div class="clock_number">00</div>
-    
   </div>
 </div>
 
 <script>
-  function updateClock() {
+ function updateClock() {
     const now = new Date();
-    const hours = now.getHours() || 12;
+    let hours = now.getHours();
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
+
+    // Convert to 12-hour format
+    hours = hours % 12 || 12;
 
     // Calculate angles for hour, minute, and second hands
     const hourAngle = (hours % 12) * 30 + minutes * 0.5;
@@ -79,17 +78,18 @@
     const secondAngle = seconds * 6;
 
     // Rotate the lines based on the calculated angles
-    $("#hourLine").css("transform",rotate(${hourAngle}deg)).children(".clock_number").html(hours).css("transform",rotate(${-hourAngle}deg))
-    $("#minuteLine").css("transform",rotate(${minuteAngle}deg)).children(".clock_number").html(minutes).css("transform",rotate(${-minuteAngle}deg))
-    $("#secondLine").css("transform",rotate(${secondAngle}deg)).children(".clock_number").html(seconds).css("transform",rotate(${-secondAngle}deg))
-  }
+    $("#hourLine").css("transform", `rotate(${hourAngle}deg)`).children(".clock_number").html(hours).css("transform", `rotate(${-hourAngle}deg)`);
+    $("#minuteLine").css("transform", `rotate(${minuteAngle}deg)`).children(".clock_number").html(minutes).css("transform", `rotate(${-minuteAngle}deg)`);
+    $("#secondLine").css("transform", `rotate(${secondAngle}deg)`).children(".clock_number").html(seconds).css("transform", `rotate(${-secondAngle}deg)`);
+}
 
-  // Update the clock every second
-  setInterval(updateClock, 1000);
+// Update the clock every second
+setInterval(updateClock, 1000);
 
-  // Initial call to display the clock immediately
-  updateClock();
+// Initial call to display the clock immediately
+updateClock();
+
 </script>
 
 </body>
-</html> -->
+</html>
